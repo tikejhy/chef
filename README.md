@@ -1,9 +1,9 @@
 # filebeats Cookbook
 
-TODO: Enter the cookbook description here.
+Filebeats Cookbook
 
 e.g.
-This cookbook makes your favorite breakfast sandwich.
+This cookbook makes rendered filebeat templates.
 
 ## Requirements
 
