@@ -1,0 +1,25 @@
+filebeat:
+ prospectors:
+  
+<% @rolename.each do |role| %>
+   #Some prospector should be passed in here based on role
+<%= render "filebeat-syslog.yaml.erb" -%>
+  
+<%= render "filebeat-#{role}.yaml.erb" -%>
+<% end %>    
+   registry_file: <%= @path_registry %>
+
+output:
+
+  logstash:
+     hosts: ["<%= node.filebeats.logstashhost %>:<%= node.filebeats.logstashport %>"]
+  #tls:
+     #certificate_authorities: ["/etc/pki/tls/certs/beats.crt"]
+     #insecure: true
+
+shipper:
+
+logging:
+
+  files:
+    rotateeverybytes: 10485760 # = 10MB

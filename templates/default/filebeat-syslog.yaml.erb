@@ -1,0 +1,10 @@
+  -
+   paths:
+        <% @path_sys_log_file.each do |i| %>
+        - <%= i %>
+	<% end %>
+   input_type: <%= @input_type %>
+   document_type: <%= @document_type %>
+   fields:
+    service:
+    zone: <%= @my_public_zone  %>

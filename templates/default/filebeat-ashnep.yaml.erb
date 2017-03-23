@@ -1,0 +1,15 @@
+  <% @path_apache_log_file.each do |j| %>
+  -
+   paths:
+        - <%= j %>
+   input_type: <%= @input_type %>
+   <% if j =~ /error_log/ %>
+   document_type: apache-error-log
+   <% else %>
+   document_type: apache-access-log
+   <% end %>
+   fields:
+    service:
+    zone: <%= @my_public_zone %>
+        
+    <% end %>
